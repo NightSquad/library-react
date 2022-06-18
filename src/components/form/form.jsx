@@ -15,8 +15,7 @@ function AddBookForm({books, setBooks, setFormState}) {
             })
             reader.readAsDataURL(e.target.files[0])
         }
-        return false
-      }
+    }
 
     const handleSubmit = (e) => {
         if (title.current.value.length === 0 || author.current.value.length === 0) return false

@@ -20,11 +20,13 @@ function Book(props) {
     }
 
     const handleFileChange = (e) => {
+        if (e.target.files[0].type === "image/png" || e.target.files[0].type === "image/jpeg") {
         const reader = new FileReader();
         reader.addEventListener('load', () => {
             setBook({...book, image: reader.result})
         })
         reader.readAsDataURL(e.target.files[0])
+    }
     }
 
     const handleSave = () => {
@@ -46,7 +48,7 @@ function Book(props) {
         <div className={styles.book}>
             {editMode ? 
                 <form>
-                    <input className={styles.fileInput} onChange={(e) => handleFileChange(e)} type="file" name="image" id="image" />
+                    <input className={styles.fileInput} accept="image/png, image/jpeg" onChange={(e) => handleFileChange(e)} type="file" name="image" id="image" />
                     <label className={styles.pointer} htmlFor="image">
                         {book.image ? <img className={styles.bookImage} src={book.image} alt={book.title} /> : <div className={styles.blankImage}><span>?</span></div>}
                     </label>
