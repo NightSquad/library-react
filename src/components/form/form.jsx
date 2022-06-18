@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 
 function AddBookForm({books, setBooks, setFormState}) {
     const [image, setImage] = useState(null)
-    const lastId = books[books.length - 1]?.id;
+    const lastId = books && books.length > 0 ? books[books.length - 1].id : 0;
     const title = useRef(null),
           author = useRef(null)
 
@@ -19,7 +19,7 @@ function AddBookForm({books, setBooks, setFormState}) {
 
     const handleSubmit = (e) => {
         if (title.current.value.length === 0 || author.current.value.length === 0) return false
-        setBooks([...books, {id: lastId ? lastId + 1 : 0, title: title.current.value, author: author.current.value, image}])
+        setBooks([...books ? books : "", {id: lastId + 1, title: title.current.value, author: author.current.value, image}])
         setFormState(false)
     }
 

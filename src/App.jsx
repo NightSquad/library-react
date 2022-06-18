@@ -23,7 +23,7 @@ function App() {
         <AddBookForm setFormState={setFormState} books={books} setBooks={setBooks}/>
       : <button onClick={handleClick} className='addBookButton'><AddBox fontSize='large' color="success"/></button>}
       <div className="books">
-        {books.map(book => <Book booksState={[books, setBooks]} key={book.id} info={book}/>)}
+        {books && books.length > 0 ? books.map(book => <Book booksState={[books, setBooks]} key={book.id} info={book}/>) : <p className="emptyMessage">Книг нет</p>}
       </div>
     </div>
   );

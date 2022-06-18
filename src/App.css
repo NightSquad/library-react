@@ -82,7 +82,12 @@
 .books {
   margin-top: 15px;
   display: flex;
+  justify-content: center;
   column-gap: 15px;
   width: 1280px;
   flex-wrap: wrap;
+}
+
+.emptyMessage {
+  align-self: center;
 }
