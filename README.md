@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Demo: https://NigthSquad.github.io/library-react
+Demo: [https://NigthSquad.github.io/library-react](https://nightsquad.github.io/library-react/)
 
 ## Available Scripts
 
